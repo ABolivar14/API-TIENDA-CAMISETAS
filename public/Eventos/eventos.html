@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Eventos</title>
+  <link rel="stylesheet" href="eventos.css">
+</head>
+<body>
+  <button id="modoOscuroBtn" class="modo-oscuro-toggle">🌙 Modo Oscuro</button>
+
+  <div class="container">
+    <h1>Eventos</h1>
+    
+    <h2>Buscar Evento</h2>
+    
+<form id="searchForm" class="form">
+  <input type="text" id="searchQuery" placeholder="Buscar por nombre o fecha" oninput="buscarEventos()">
+  <p id="eventCount">Total de eventos: 0</p>
+</form>
+
+    <ul id="eventList" class="user-list"></ul>
+
+    <h2>Agregar Evento</h2>
+    <form id="eventForm" class="form">
+      <input name="nombre" required minlength="3" placeholder="Nombre del evento" >
+      <input type="date" name="fecha" id="fecha" required>
+      <textarea name="descripcion" placeholder="Descripción del evento" required></textarea>
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+
+  <div id="editModal" class="modal">
+    <h3>Editar Evento</h3>
+    <form id="editForm" class="form">
+      <input type="hidden" name="id" id="editId" >
+      <input type="text" minlength="3" name="nombre" id="editNombre" placeholder="Nombre" required><br>
+      <input type="date" name="fecha" id="editFecha" required><br>
+      <textarea name="descripcion" id="editDescripcion" placeholder="Descripción del evento" required></textarea><br>
+      <button type="submit">Guardar cambios</button>
+      <button type="button" onclick="cerrarModal()">Cancelar</button>
+    </form>
+  </div>
+  <div id="overlay" class="overlay"></div>
+  <script src="scriptEventos.js"></script>
+</body>
+</html>

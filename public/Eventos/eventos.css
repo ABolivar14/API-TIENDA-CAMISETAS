@@ -1,0 +1,293 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8;
+  color: #333;
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #0077cc;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+/* Estilo de los inputs y botones */
+.form input,
+.form select,
+.form textarea,
+.form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form button {
+  background-color: #0077cc !important;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #005fa3 !important;
+}
+
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-list li {
+  background: #e9f3ff;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  transition: transform 0.2s ease;
+  animation: fadeInUp 0.3s ease forwards;
+  
+}
+
+.user-list li:hover {
+  transform: scale(1.01);
+}
+
+.user-list button {
+  margin-left: 10px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user-list button:hover {
+  background-color: #d90000;
+}
+
+.user-list button:last-child {
+  background-color: #4caf50;
+}
+
+.user-list button:last-child:hover {
+  background-color: #3e8e41;
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal y transición */
+#editModal {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+#editModal.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Modal para agregar eventos */
+.modal {
+  display: none;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  opacity: 0;
+  width: 400px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal.visible {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+/* Superposición del modal */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.visible {
+  display: block;
+  opacity: 1;
+}
+body.dark-mode {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .container {
+  background: #1e1e1e;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .form input,
+body.dark-mode .form textarea,
+body.dark-mode .form button {
+  background: #2a2a2a;
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+
+body.dark-mode .form button {
+  background-color: #3399ff !important;
+}
+
+body.dark-mode .form button:hover {
+  background-color: #267acc !important;
+}
+
+body.dark-mode .user-list li {
+  background: #1c1c1c;
+}
+
+body.dark-mode .user-list button {
+  background-color: #d9534f;
+}
+
+body.dark-mode .user-list button:hover {
+  background-color: #b52b27;
+}
+
+body.dark-mode .user-list button:last-child {
+  background-color: #5cb85c;
+}
+
+body.dark-mode .user-list button:last-child:hover {
+  background-color: #449d44;
+}
+
+body.dark-mode .modal {
+  background: #222;
+  color: #fff;
+}
+.modo-oscuro-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.modo-oscuro-toggle:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+body.dark-mode .modo-oscuro-toggle {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode .modo-oscuro-toggle:hover {
+  background-color: #666;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-list li {
+  animation: fadeSlideUp 0.4s ease forwards;
+  opacity: 0; /* comienza invisible */
+}
+.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+.slide-down {
+  animation: slideDown 0.4s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

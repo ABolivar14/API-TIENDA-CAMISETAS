@@ -1,4 +1,4 @@
-# 👕 API Tienda de Camisetas
+#  API USUARIOS Y EVENTOS
 
 Esta es una API REST desarrollada con **Node.js** y **Express** diseñada para gestionar el inventario y las operaciones básicas de una tienda de ropa online. El proyecto sigue las mejores prácticas de desarrollo, incluyendo el manejo de variables de entorno y control de versiones con Git.
 

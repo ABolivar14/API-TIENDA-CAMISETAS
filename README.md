@@ -17,7 +17,7 @@ Sigue estos pasos para ejecutar el proyecto localmente:
     ```
     bash
 
-    git clone [https://github.com/ABolivar14/API-TIENDA-CAMISETAS.git](https://github.com/ABolivar14/API-TIENDA-CAMISETAS.git)
+    git clone [https://github.com/ABolivar14/API-USUARIOS-EVENTOS.git](https://github.com/ABolivar14/API-USUARIOS-EVENTOS.git)
     cd API-TIENDA-CAMISETAS
     ```
 
